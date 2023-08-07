@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLAMES Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+   
+</head>
+
+<body>
+  <div class="topbar"><h1>F.L.A.M.E.S</h1></div>
+  <div class="container">
+    <h2>Check Your Relationship</h2>
+    <form method="post">
+      <label for="name1"><h3>Enter Your Name:</h3></label>
+      <input type="text" id="name1" name="name1" required>
+
+      <label for="name2"><h3>Enter Your Partner's Name:</h3></label>
+      <input type="text" id="name2" name="name2" required>
+
+      <input type="submit" value="Calculate">
+    </form>
+  </div>
+</body>
+
+</html>

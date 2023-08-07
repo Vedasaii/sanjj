@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLAMES Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <div class="topbar"><h1>F.L.A.M.E.S</h1></div>
+  <div class="result-container">
+    <p class="result {{ result_category }}"><h2 style="margin-bottom: -5%; margin-top: -5%;">{{ result_label }}</h2></p>
+    <div class="result {{ result_category }}">
+      <p class="relation-text"><h1 >The relation between<br> {{ name1 }} & {{ name2 }} is:</h1></p>
+      
+      <p class="flames-result"><h2>{{ result }}</h2></p>
+      <img class="emoji {{ emoji_animation }}" src="{{ url_for('static', filename=emoji + '.gif') }}" alt={{ emoji }}>
+      <p class="quote"><h3>{{ quote }}</h3></p>
+    </div>
+    <form action="/try-again" method="GET">
+      <button type="submit">Try Again</button>
+    </form>
+  </div>
+</body>
+
+</html>
