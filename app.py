@@ -7,6 +7,7 @@ def calculate_flames(name1, name2):
     name1 = name1.lower().replace(" ", "")
     name2 = name2.lower().replace(" ", "")
     flames = ["Friends", "Love", "Affection", "Marriage", "Enemy", "Siblings"]
+    
 
     for char in name1:
         if char in name2:
@@ -14,10 +15,18 @@ def calculate_flames(name1, name2):
             name2 = name2.replace(char, "", 1)
 
     combined_names = name1 + name2
-    flames_result = flames[len(combined_names) % len(flames)]
+    y=len(combined_names)
+    while(len(flames)!=1):
+        m=y%len(flames)
+        flames.pop(m-1)
+        if m==0:
+            flames=flames[:len(flames)]
+        else:
+            flames=flames[m-1:]+flames[:m-1]
+    flames_result = flames[0]
     flames_abbr = flames_result[0].upper()  # Use abbreviation
-
     return flames_result, flames_abbr
+
 
 def get_relation_emoji(result):
     emoji_dict = {
